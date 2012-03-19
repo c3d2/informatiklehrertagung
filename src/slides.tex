@@ -11,19 +11,20 @@
 
 \begin{document}
 \maketitle
-\frame{\tableofcontents[hideallsubsections]}
 
-\section{Meta}
+\section{Einleitung}
 
 \subsection{Vorstellung}
 
 \begin{frame}
   \frametitle{Wer sind wir?}
   \begin{itemize}
-    \item<1-> Chaos Computer Club Dresden
-    \item<2-> Datenspuren
-    \item<3-> Podcasts
-    \item<4-> Chaos macht Schule
+    \item<2-> Chaos Computer Club Dresden (http://c3d2.de)
+      \note{}
+    \item<3-> Datenspuren (http://datenspuren.de)
+    \item<4-> Podcasts (http://pentamedia.de
+    \item<5-> Chaos macht Schule (http://ccc.de/schule)
+      \note{}
   \end{itemize}
 \end{frame}
 
@@ -32,12 +33,17 @@
 \begin{frame}
   \frametitle{Unser Anliegen}
   \begin{itemize}
-    \item<1-> Kinder auf das Internet vorbereiten ...
-    \item<2-> ... nicht das Internet auf Kinder
-    \item<3-> Medienkompetenz
-    \item<4-> Kreativer Umgang mit Technik
+    \item<2-> Kinder auf das Internet vorbereiten ...
+    \item<3-> ... nicht das Internet auf Kinder
+      \note{Scheren-Vergleich}
+    \item<4-> Medienkompetenz
+      \note{Medium nicht nur benutzen, sondern auch verstehen. Wir machen keinen Datenschutz-Richtlinien bei Facebook klicken Vortrag!}
+    \item<5-> Kreativer Umgang mit Technik
+      \note{Eigene Dinge schaffen, weg von der Konsum-Mentalität}
   \end{itemize}
 \end{frame}
+
+\frame{\tableofcontents[hideallsubsections]}
 
 \section{Internet}
 
@@ -46,11 +52,23 @@
 \begin{frame}
   \frametitle{Grundlagen des Internets}
   \begin{itemize}
-    \item<1-> Dezentralität
-    \item<2-> Jeder ist Sender und Empfänger
-    \item<3-> Verlinkung
-    \item<4-> Pseudonymität
+    \item<2-> Dezentralität
+      \note{Es gibt keinen zentralen Server, keinen zentralen Knoten, Pakete nehmen immer andere Routen, Ausfallsicherheit}
+    \item<3-> Jeder ist Sender und Empfänger
+      \note{Jeder kann Pakete empfangen und senden (nicht nur mit Server, sondern auch untereinander), Demokratie, kein 'Rundfunk' - Nutzer generieren Inhalt (Interaktivität}
+    \item<4-> Verlinkung
+      \note{Server untereinander Verbunden, Hyperlinks, alles miteinander 'vernetzt', soziale Vernetzung}
+    \item<5-> Pseudonymität
+      \note{Jeder Rechner im Internet eindeutig identifizierbar, jedoch nicht der Nutzer, keine Anonymität!, Internethund}
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pseudonymität}
+  \begin{figure}
+    \includegraphics[height=0.7\textheight]{img/internet_dog.jpg}
+    \caption{Copyright Image from New Yorker cartoon by Peter Steiner. http://en.wikipedia.org/wiki/File:Internet\_dog.jpg}
+  \end{figure}
 \end{frame}
 
 \subsection{Probleme}
@@ -58,9 +76,12 @@
 \begin{frame}
   \frametitle{Probleme des Internets}
   \begin{itemize}
-    \item<1-> Ungeschützte Datenübertragung
-    \item<2-> Keine Authentifizierung
-    \item<3-> "Das Internet vergisst nicht"
+    \item<2-> Ungeschützte Datenübertragung
+      \note{keine Verschlüsselung (erst auf höherer Ebene), jeder auf der Paketroute kann mitlesen}
+    \item<3-> Keine Authentifizierung
+      \note{TOR-Anonymisierung"` SSL-Verschlüsselung"' Ende-zu-Ende Verschlüsselung (OTR/GPG/PGP für Chat, GPG/PGP für Email)"` Passworteingabe in Formularen, Identitätsdiebstahl}
+    \item<4-> "Das Internet vergisst nicht"
+      \note{Rechner kopieren Daten!, Privatnutzer, Crawler, Internet-Archive, Screenshot}
   \end{itemize}
 \end{frame}
 
@@ -71,6 +92,7 @@
   \begin{figure}
       \includegraphics[height=0.7\textheight]{img/internet_map.jpg}
       \caption{CC-BY https://de.wikipedia.org/wiki/Datei:Internet\_map\_1024.jpg}
+      \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
   \end{figure}
 \end{frame}
 
@@ -79,9 +101,9 @@
 \begin{frame}
   \frametitle{Historie des Internets}
   \begin{itemize}
-    \item<1-> Web 1.0
-    \item<2-> Zulauf von Firmen und Allgemeinheit
-    \item<3-> Web 2.0
+    \item<2-> Web 1.0
+    \item<3-> Zulauf von Firmen und Allgemeinheit
+    \item<4-> Web 2.0
   \end{itemize}
 \end{frame}
 
@@ -98,10 +120,10 @@
 \begin{frame}
   \frametitle{Soziale Netzwerke (2)}
   \begin{itemize}
-    \item<1-> Zentralität
-    \item<2-> Identität
-    \item<3-> Was bedeutet "Befreundet sein"?
-    \item<4-> gerichtete/ungerichtete Graphen
+    \item<2-> Zentralität
+    \item<3-> Identität
+    \item<4-> Was bedeutet "Befreundet sein"?
+    \item<5-> gerichtete/ungerichtete Graphen
   \end{itemize}
 \end{frame}
 
@@ -119,12 +141,12 @@
 \begin{frame}
   \frametitle{Back to the Basics}
   \begin{itemize}
-    \item<1-> Alle Sender gleichberechtigt
-    \item<2-> Dezentrale Dienste
+    \item<2-> Alle Sender gleichberechtigt
+    \item<3-> Dezentrale Dienste
       \begin{itemize}
-        \item<3-> Email
-        \item<4-> Jabber/XMPP
-        \item<5-> Diaspora, Buddycloud
+        \item<4-> Email
+        \item<5-> Jabber/XMPP
+        \item<6-> Diaspora, Buddycloud
       \end{itemize}
   \end{itemize}
 \end{frame}
@@ -134,10 +156,10 @@
 \begin{frame}
   \frametitle{Freie Lizenzen}
   \begin{itemize}
-    \item<1-> Jeder ist Produzent und Konsument
-    \item<2-> Urheberrecht schränkt Verwendung ein
-    \item<3-> Freie Lizenzen ermöglichen Verbreitung
-    \item<4-> Sharing is caring
+    \item<2-> Jeder ist Produzent und Konsument
+    \item<3-> Urheberrecht schränkt Verwendung ein
+    \item<4-> Freie Lizenzen ermöglichen Verbreitung
+    \item<5-> Sharing is caring
   \end{itemize}
 \end{frame}
 
@@ -146,14 +168,14 @@
 \begin{frame}
   \frametitle{Freie Medien}
   \begin{itemize}
-    \item<1-> Freie Lehrmaterialien
-    \item<2-> Freie Musik
+    \item<2-> Freie Lehrmaterialien
+    \item<3-> Freie Musik
       \begin{itemize}
         \item Jamendo
         \item Free Music Archive
         \item Pentamusic
       \end{itemize}
-    \item<3-> OpenStreetMap
+    \item<4-> OpenStreetMap
   \end{itemize}
 \end{frame}
 
