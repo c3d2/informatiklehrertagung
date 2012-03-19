@@ -6,6 +6,6 @@ all: $(PDF_FILES)
 clean:
 	rm -rf out
 
-out/%.pdf: src/%.tex
+out/%.pdf: src/%.tex img/* Makefile
 	@mkdir -p out
 	pdflatex -output-directory out $<
