@@ -11,19 +11,20 @@
 
 \begin{document}
 \maketitle
-\frame{\tableofcontents[hideallsubsections]}
 
-\section{Meta}
+\section{Einleitung}
 
 \subsection{Vorstellung}
 
 \begin{frame}
   \frametitle{Wer sind wir?}
   \begin{itemize}
-    \item<1-> Chaos Computer Club Dresden
-    \item<2-> Datenspuren
-    \item<3-> Podcasts
-    \item<4-> Chaos macht Schule
+    \item<1-> Chaos Computer Club Dresden (http://c3d2.de)
+      \note{}
+    \item<2-> Datenspuren (http://datenspuren.de)
+    \item<3-> Podcasts (http://pentamedia.de
+    \item<4-> Chaos macht Schule (http://ccc.de/schule)
+      \note{}
   \end{itemize}
 \end{frame}
 
@@ -34,10 +35,15 @@
   \begin{itemize}
     \item<1-> Kinder auf das Internet vorbereiten ...
     \item<2-> ... nicht das Internet auf Kinder
+      \note{Scheren-Vergleich}
     \item<3-> Medienkompetenz
+      \note{Medium nicht nur benutzen, sondern auch verstehen. Wir machen keinen Datenschutz-Richtlinien bei Facebook klicken Vortrag!}
     \item<4-> Kreativer Umgang mit Technik
+      \note{Eigene Dinge schaffen, weg von der Konsum-Mentalität}
   \end{itemize}
 \end{frame}
+
+\frame{\tableofcontents[hideallsubsections]}
 
 \section{Internet}
 
@@ -47,10 +53,22 @@
   \frametitle{Grundlagen des Internets}
   \begin{itemize}
     \item<1-> Dezentralität
+      \note{Es gibt keinen zentralen Server, keinen zentralen Knoten, Pakete nehmen immer andere Routen, Ausfallsicherheit}
     \item<2-> Jeder ist Sender und Empfänger
+      \note{Jeder kann Pakete empfangen und senden (nicht nur mit Server, sondern auch untereinander), Demokratie, kein 'Rundfunk' - Nutzer generieren Inhalt (Interaktivität}
     \item<3-> Verlinkung
+      \note{Server untereinander Verbunden, Hyperlinks, alles miteinander 'vernetzt', soziale Vernetzung}
     \item<4-> Pseudonymität
+      \note{Jeder Rechner im Internet eindeutig identifizierbar, jedoch nicht der Nutzer, keine Anonymität!, Internethund}
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pseudonymität}
+  \begin{figure}
+    \includegraphics[height=0.7\textheight]{img/internet_dog.jpg}
+    \caption{Copyright Image from New Yorker cartoon by Peter Steiner. http://en.wikipedia.org/wiki/File:Internet\_dog.jpg}
+  \end{figure}
 \end{frame}
 
 \subsection{Probleme}
@@ -59,8 +77,11 @@
   \frametitle{Probleme des Internets}
   \begin{itemize}
     \item<1-> Ungeschützte Datenübertragung
+      \note{keine Verschlüsselung (erst auf höherer Ebene), jeder auf der Paketroute kann mitlesen}
     \item<2-> Keine Authentifizierung
+      \note{TOR-Anonymisierung"` SSL-Verschlüsselung"' Ende-zu-Ende Verschlüsselung (OTR/GPG/PGP für Chat, GPG/PGP für Email)"` Passworteingabe in Formularen, Identitätsdiebstahl}
     \item<3-> "Das Internet vergisst nicht"
+      \note{Rechner kopieren Daten!, Privatnutzer, Crawler, Internet-Archive, Screenshot}
   \end{itemize}
 \end{frame}
 
@@ -71,6 +92,7 @@
   \begin{figure}
       \includegraphics[height=0.7\textheight]{img/internet_map.jpg}
       \caption{CC-BY https://de.wikipedia.org/wiki/Datei:Internet\_map\_1024.jpg}
+      \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
   \end{figure}
 \end{frame}
 
