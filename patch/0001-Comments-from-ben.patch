@@ -1,0 +1,404 @@
+From 30070f4060b7dfd93109a79a89df2628b3cf2600 Mon Sep 17 00:00:00 2001
+From: Benjamin Kellermann <Benjamin.Kellermann@gmx.de>
+Date: Mon, 19 Mar 2012 23:47:27 +0100
+Subject: [PATCH] Comments from ben
+
+to read with okular or adobe reader (evince seems not to work)
+---
+ img/by-sa.png  |  Bin 0 -> 5083 bytes
+ img/by.png     |  Bin 0 -> 4739 bytes
+ src/slides.tex |   64 +++++++++++++++++++++++++++++++++++--------------------
+ 3 files changed, 41 insertions(+), 23 deletions(-)
+ create mode 100644 img/by-sa.png
+ create mode 100644 img/by.png
+
+diff --git a/img/by-sa.png b/img/by-sa.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..f0a944e0b89642ae282047846e55393007b04686
+GIT binary patch
+literal 5083
+zcmV<16C~`3P)<h;3K|Lk000e1NJLTq003A30018d1^@s6W5^2N00009a7bBm000XU
+z000XU0RWnu7ytkYPiaF#P*7-ZbZ>KLZ*U+<Lqi~Na&Km7Y-Iodc-oy)XH-+^7Crag
+z^g>IBfRsybQWXdwQbLP>6p<z>Aqfylh#{fb6;Z(vMMVS~$e@S=j*ftg6;Uh<iVD~V
+z<RPMtgQJLw%KPDaqifc@_vX$1wbwr9tn;0-&j-K=43<bUQ8j=JsX`tR;Dg7+#^K~H
+zK!FM*Z~zbpvt%K2{UZSY_<lS*D<Z%Lz5oGu(+dayz)hRLFdT>f59&ghTmgWD0l;*T
+zI7<kC6aYYajzXpYKt=(8otP$50H6c_V9R4-;{Z@C0AMG7=F<Rxo%or10RUT+Ar%3j
+zkpLhQWr#!oXgdI`&sK^>09Y^p6lP1rIRMx#05C~cW=H_Aw*bJ-5DT&Z2n+x)QHX^p
+z00esgV8|mQcmRZ%02D^@S3L16t`O%c004NIvOKvYIYoh62rY33S640`D9%Y2D-<?i
+z0%4j!F2Z@488U%158(66005wo6%pWr^Zj_v4zAA5HjcIqUoGmt2LB>rV&neh&#Q1i
+z007~1e$oCcFS8neI|hJl{-P!B1ZZ9hpmq0)X0i`JwE&>$+E?>%_<lS*MWK+n+1cgf
+z<k(8YLR(?VSAG6x!e78w{cQPuJpA|d;J)G{fihizM+Erb!p!tcr5w+a34~(Y=8s4G
+zw+sLL9n&JjNn*KJDiq^U5^;`1nvC-@r6P$!k}1U{(*I=Q-z@tBKHoI}uxdU5dyy@u
+zU1J0GOD7Ombim^G008p4Z^6_k2m^p<gW=D2|L;HjN1!DDfM!XOaR2~bL?kX$%CkSm
+z2mk;?pn)o|K^yeJ7%adB9Ki+L!3+FgHiSYX#KJ-lLJDMn9CBbOtb#%)hRv`YDqt_v
+zKpix|QD}yfa1JiQRk#j4a1Z)n2%f<xynzV>LC6RbVIkUx0b+_+BaR3cnT7Zv!AJxW
+zizFb)h!jyGOOZ85F;a?DAXP{m@;!0_Ifq<Ex{*7`05XF7hP+2Hl!3BQJ=6@fL%FCo
+z8iYoo3(#bAF`ADSpqtQgv>H8(HlgRxt7s3}k3K`kFu>>-2Q$QMFfPW!La{h336o>X
+zu_CMttHv6zR;&ZNiS=X8v3CR#fknUxHUxJ<AYmRsNLWl*PS{AOARHt#5!wki2?K;t
+z!Y3k=s7tgax)J%r7-BLphge7~Bi0g+6E6^Zh(p9TBoc{3GAFr^0!gu?RMHaCM$&Fl
+zBk3%un>0uoBa_M6WNWeqIg~6QE69c9o#eyhGvpiOA@W-aonk<7r1(?fC{oI5N*U!4
+z<uv66WtcKSRim0x-Ke2d5jBrmLam{;Qm;{ms1r1GnmNsb7D-E`t)i9F8fX`2_i3-_
+zbh;7Ul^#x)&{xvS=|||7=mYe33=M`AgU5(xC>fg=2N-7=cNnjjOr{yriy6mMFgG#l
+znCF=fnQv8CDz++o6_Lscl}eQ+l^ZHARH>?_s@|##Rr6KLRFA1%Q+=*RRWnoLsR`7U
+zt5vF<Q0r40Q)j6=sE4X&sBct1q<&fbi3VB2Ov6t@q*0);U*o*SAPZv|vv@2aYYnT0
+zb%8a+Cb7-ge0D0knEf5Qi#@8Tp*ce{N;6lpQuCB%KL_KOarm5cP6_8Ir<e17iry6O
+zDdH&`rZh~sF=bq9s+O0QSgS~@QL9Jmy*94xr=6y~MY~!1fet~(N+(<=M`w@D1)b+p
+z*;C!83a1uLJv#NSE~;y#8=<>IcfW3@?wFpwUVxrVZ>QdQz32KIeJ}k~{cZZE^+ya?
+z2D1z#2HOnI7(B%_ac?{wFUQ;QQA1tBKtrWrm0_3Rgps+?Jfqb{jYbcQX~taRB;#$y
+zZN{S}1|}gUOHJxc?wV3fxuz+mJ4`!F$IZ;mqRrNsHJd##*D~ju=bP7?-?v~|cv>vB
+zsJ6IeNwVZxrdjT`yl#bBIa#GxRa#xMMy;K#CDyyGyQdMSxlWT#tDe?p!?5wT$+oGt
+z8L;Kp2HUQ-ZMJ=3XJQv;x5ci*?vuTfeY$;({XGW_huIFR9a<fJbF^|4I#xQ~n$Dc=
+zKYhjYmgz5NSkDm8*fZm{6U!;YX`NG>(?@3)XSs8O^N5RyOM=TTmp(3=8^+zpz2r)C
+z^>JO{deZfso3oq3?Wo(Y?l$ge?uXo;%ru`Vo>?<<(8I_>;8Eq#KMS9gFl*neeosSB
+zfoHYnBQIkwkyowPu(zdms`p{<7e4kra-ZWq<2*OsGTvEV%s0Td$hXT+!*8Bnh2KMe
+zBmZRodjHV?r+_5^X9J0WL4jKW`}lf%A-|44I@@LTvf1rHjG(ze6+w@Jt%Bvjts!X0
+z?2xS?_ve_-k<Mujg;0Lz*3buG=3$G&ehepthlN*$KaOySSQ^nWmo<0M+(UEUMEXRQ
+zMBbZcF;6+KElM>iKB_KiJlZ$9G`c^=E@oNG)mWWaNo-3TIW8)$Hg0Ub-~8?KhvJ>$
+z3*&nim@mj(aCxE5!t{lw7O5^0EIO7zOo&c6l<+|iDySBWCGrz@C5{St!X3hAA}`T4
+z(TLbXTq+(;@<=L8dXnssyft|w#WSTW<++3>sgS%(4NTpeI-VAqb|7ssJvzNHgOZVu
+zaYCvgO_R1~>SyL=cFU|~g|hy|Zi}}s9+d~lYqOB71z9Z$wnC=pR9Yz4DhIM>Wmjgu
+z&56o6maCpC&F##y%G;1PobR9i?GnNg;gYtchD%p19a!eQtZF&3JaKv33gZ<8D~47E
+ztUS1iwkmDaPpj=$m#%)jCVEY4fnLGNg2A-`YwHVD3gv};>)hAvT~AmqS>Lr``i7kw
+zJ{5_It`yrBmlc25DBO7E8;5VoznR>Ww5hAaxn$2~(q`%A-YuS64wkBy=9dm`4cXeX
+z4c}I@?e+FW+b@^RDBHV(wnMq2zdX3SWv9u`%{xC-q*U}&`cyXV(%rRT*Z6MH?i+i&
+z_B8C(+grT%{XWUQ+f@NoP1R=AW&26{v-dx)iK^-Nmiuj8txj!m?Z*Ss1N{dh4z}01
+z)YTo*JycSU)+_5r4#yw9{+;i4Ee$peRgIj+;v;ZGdF1K$3E%e~4LaI(jC-u%2h$&R
+z9cLXcYC@Xwnns&bn)_Q~Te?roKGD|d-g^8;+aC{{G(1^(O7m37Y1-+6)01cN&y1aw
+zoqc{T`P^XJqPBbIW6s}d4{z_f5Om?vMgNQEJG?v2T=KYd^0M3I6IZxbny)%vZR&LD
+zJpPl@Psh8QyPB@KTx+@RdcC!KX7}kEo;S|j^u2lU7XQ}Oo;f|;z4Ll+_r>@1-xl3|
+zawq-H%e&ckC+@AhPrP6BK<z=<L*0kfKU@CX*zeqbYQT4(^U>T#_XdT7&;F71j}Joy
+zkC~6lh7E@6o;W@^IpRNZ{ptLtL(gQ-CY~4mqW;US7Zxvm_|@yz&e53Bp_lTPlfP|z
+zrTyx_>lv@x#=^!PzR7qqF<$gm`|ZJZ+;<)Cqu&ot<a{81DF0~rvGr5Xr~8u`lav1h
+z1DNytV>2z=00004XF*Lt006O$eEU(80000WV@Og>004R=004l4008;_004mL004C`
+z008P>0026e000+nl3&F}000Q~Nkl<Zc-rh*OKcm*8UFSmqcS3PeM$nVh;$Qm@%nj6
+zEV5}+xQ^{*ExUHy)T9p$8lxbU+H%@Rq9|LbquQa^!ZF$=665q5X#D~jr!ZG)fLfGo
+zQg8t3Mh1{j=Ol$n0bAVN>0x(=yA<`H9zo;y7lu1KkAHW+`R1R0{t-h6aWM?@6`shN
+z3n7GI01yDUaq~J@mIceQ;5ZH}%YkEAu$*~iSuhL>mSMm!48Sm!77!2+oj@l#blpgr
+zrWsdVgQn@wb&b~PM5pZuA=b;#{No@8_a6cPFaU@JF2`|3V!2YD<BU3%GeKs+FsvP4
+z6C4v*-2hY5%w*4NPLOq7r@-2Qew;w&0XV_sc<_#^k*;02j$|^4R4Rqp!mLA4ovRKz
+zckYDmhd%7x_cAn{1Iwz$fM_fjFy>g=rjJgHnE-PRF^hwHZ!8V@V;R|O)=}>9cpx2+
+zuyx0lRe`Zy`WXP^lUx4)&+`;ip689k@fcP{(08s6Q&UsRQs{QO(f+%3w6yGks%g+P
+z6{>0`O@*pzl;M?_T+ZSL|M?OZ;}<cJod5uMy<Ui-2mr`rGEfu+0MO)V!imrcJoD_+
+zRROS``Va0uWB~ln;ZMPHd<j^-1~oj7NM|?XA(?g%1ObvHp`oDxEiEkofZ^d`<nwvR
+zvW%IT8QNCzOE}s7Thwl>g{rD3swz~q2vt>`Cc^?)H*L8M=&uW3BXlB+LZJXjk`Rl<
+z(9qD}_=tQykG8fp$g&KV%Z1*)-erTZ-ufxPxBhhtH5RZnJZktF2e^VDARG=O6beBQ
+zgas8Q5(%`mwNap(JWY6i;BWX|Z7o!_h+?rwnOqU%GJD+lW)~*169@zX7#tidO*_-H
+z*qNS4BoGV+(d22unR7kM0-%!q$;nAfO->rKvA!Pl_4O;(e{laHumHfBHkju)@SKym
+zq9`JrP9qYDEDA0F1Ofr%aydH1CbAPa-*>@b%USA?Fr{Sv*#W#amc~SO0+J-5{nV)?
+zKPC_eK$0X(WG8TMEWIq7Tdx1_moLNn{0lgG_y~?3J_7IaFW}RgH&>+J5*7eh%Pr$L
+z3@alJaFfa8ylJzT2!eoQGD$&}hhz*7kAUO&${@3r+Xn~8^2f$I#9}dcnw!i0%ZdwP
+zEEaS0T};aLkKVqG?yd;xpLrHuuMY=WTLA#S{?%*vQ-6Qe`W*lp3^rKYcdm~DH8?o9
+zBx@G~+3MT(hd$GnHo;{~pPDs23<f2T&FP=bX5saE=M8Q!7^KV(27`{ehK2@sz214A
+zKqay3FBA&Mrtbp)_Des*`-uU(bN-KbtE<y64+Dc$>vuBP{P=5Eu2XLz91c?!u0#Yu
+zpd&stHHB+euhR{S0rJ8o!jekQPb3l*^NaOaNbGHU-!+K!*AG9SWj}uDB>+I7P{5ZD
+z9#pNL0&KA<nM_h}LZJ|Cq$mpfem{IZAACL^qS5Grb^Ydavh0?{;^eKQjlCt)z%Z3f
+z#5XA}mkaTD92;GAxOC}K#WoKgK3b7(W23<^U>OFfRLXF%B#8o}C<=T&pQDqaC{Ppy
+zp->2Zzkgoc`1m+ol_g0+B9TBUl`?jKHei7gxFxT=q$`ujR9ws~<^}?RdG(e0EF|`}
+zH9U{@lP9sUww9KS-o8!q&ow+(wSF6ejSsbUXqz{0rVZNK+Nk}><#Ke<J9g|CWwI!W
+z$mMbv8X9u=$N*@5wlG^V2lQ&;I^RTiJRT^Df_y&jD7U+7_Pph@DvAP+$Ft;zm+POL
+zoJ4n51h4%3FnW8=ptt7?x;i=l0H;o$u3EnXVEf`yZfC3!3j_kx$meo71OfqCXKg+t
+zNuqW3g{S0x(Vrz>OgbPr26#DQwYB<Iqd$23ID*HI8v{2mfWd(QJbL&Dd-lGJBS&AU
+zTED|Y{6EUp9b3@kX@V@v2nK`m*jfo(S(ee{X<Am?ppyQ#x;pWb-MjI{7Y3`Fo13YN
+zSgn31gNbujWVbUGn-hryW@cuP$z;&j*obH}TJm+xZL+=2K5a|>EB#s4%bosxJ6tXo
+z5{U%-em~V^_k;8KJp6t?`uqFga=CCKbYj^bUrGP=9ouoBwG{_iTj6PLUX^~zVC#kJ
+zTy>Z&%wl|eoHmF=BJ|;#Hf?eMXVqmgnR#`VSi0(5bs)sH9R`6lrsmzemwU?f6yg{A
+z@y^?QkYyRNEJGAUh@uEV5TGauCBsUBG3%|LuG^z`N3mhU21L7}kcVUlf`IAiX@_SJ
+zkH=|@!Rz%R5{Xdu#^Z6?)?Nnyjg5`S=ks{+M=#<+>^vUL&7oMFLs2cFSX7}|aS2_6
+zuIV%gU%pfOHij!{u;=!jf1{>m13nx1458nI=(aE%4zKE^tpEuCoPGN&e!6Ej=8AKe
+zD;A*^izupP09Oe3eA@%=EC70><Mp+`?REnIqS5F)7pWSVnVF%huG{T41Mya9QipEZ
+zV#{1SuEGL<PIPFRagKJTw}%4c_xl|&-fF=0`Fyl*`<v}%fL$wrYztA+MV35XM@DpU
+z2S7R^9c1iYie&Dm$*aG7)mrL_D2gPVPLt(IE|(*sDAN9tUm}_NX)<;%MS6OBX!&<2
+zm2Sdsgvg!r7|DE|A(CIB<$@rP?(S|fJw3f3u+!7iq`SMD2!cTS?bx}4jDMaXcQRw7
+zBhv9*1eY-7PHAVP1N;3Fc%H|Fz6<#1@<%H^GK!w*hN`L<9Zli&*Ir-w6tkHP`)P)K
+z_gQ|wR?o2CugXN&Q)i^ZVDkMm8AyCU+-~=>N6hVZllY(GBy&Ga?qtTudw+Rv)hr-{
+zESk5Mtyce1&s;TwEeXF7!qHzGrKb=|au`>yTwV0oexI}tUT+IMYrAsgD$YjFu6~iI
+zz^=7oZuv7Ro%gMV#mr*+)~(yNpfl2i`X9J$rxEsWBOHFK^^Yf0laqM&d<-MQBWtq?
+z+dy1v)3DI97JKHJ0c^>xmR;DhcMrC0--hqIT+SG-=~{hNDB$j$ySQ=f#+m{9O)+>W
+x8^7)VKarISLkQW(FwB3SK(P)R3__Uy4FK>(yR3Yb!O;K!002ovPDHLkV1lxPh(-Va
+
+literal 0
+HcmV?d00001
+
+diff --git a/img/by.png b/img/by.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..822491edb993b072fc183a2ce23adfa8c94cee7c
+GIT binary patch
+literal 4739
+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
+RjS2t&002ovPDHLkV1k=~?l=Gd
+
+literal 0
+HcmV?d00001
+
+diff --git a/src/slides.tex b/src/slides.tex
+index f999720..c3a99aa 100644
+--- a/src/slides.tex
++++ b/src/slides.tex
+@@ -5,6 +5,12 @@
+ \usepackage[T1]{fontenc}
+ \usepackage[utf8]{inputenc}
+ 
++\usepackage{pdfcomment}
++\newcommand{\ben}[1]{\pdfcomment[author=Ben]{#1}}
++\newcommand{\cc}[1]{\includegraphics[height=4mm]{img/#1.png}}
++\usepackage{ifthen}
++\newcommand{\license}[2][]{\\#2\ifthenelse{\equal{#1}{}}{}{\\\scriptsize\url{#1}}}
++
+ \title{Umgang mit Sozialen Netzwerken}
+ \author{Chaos Computer Club Dresden}
+ \date{\today}
+@@ -18,18 +24,19 @@
+ \begin{frame}
+   \frametitle{Wer sind wir?}
+   \begin{itemize}
+-    \item<2-> Chaos Computer Club Dresden (http://c3d2.de)
+-    \item<3-> Datenspuren (http://datenspuren.de)
+-    \item<4-> Podcasts (http://pentamedia.de)
+-    \item<5-> Chaos macht Schule (http://ccc.de/schule)
++		\item<2-> Chaos Computer Club Dresden (\url{http://c3d2.de})
++		\item<3-> Datenspuren (\url{http://datenspuren.de})
++		\item<4-> Podcasts (\url{http://pentamedia.de})
++		\item<5-> Chaos macht Schule (\url{http://ccc.de/schule})
+   \end{itemize}
++	\ben{Ich bin generell kein Freund von "Alle Stichpunkte einzeln aufblättern" (jedenfalls denke ich, dass man zu jedem Stichpunkt genügend Text sagen können muss, damit das Click-to-Speak ratio nicht zu schlecht wird). Speziell auf dieser Folie würde ich aber dringend raten alles beim ersten mal stehen zu lassen, damit man mehr Zeit hat die Links abzuschreiben...}
+ \end{frame}
+ 
+ \begin{frame}
+   \frametitle{Unsere Anliegen}
+   \begin{itemize}
+-    \item<2-> Kinder auf das Internet vorbereiten ...
+-    \item<3-> ... nicht das Internet auf Kinder
++    \item<2-> Kinder auf das Internet vorbereiten \ldots 
++    \item<3-> \ldots nicht das Internet auf Kinder
+       \note{Scheren-Vergleich}
+     \item<4-> Informationelle Selbstbestimmung
+     \item<5-> Medienkompetenz
+@@ -37,6 +44,7 @@
+     \item<6-> Kreativer Umgang mit Technik
+       \note{Eigene Dinge schaffen, weg von der Konsum-Mentalität}
+   \end{itemize}
++	\ben{click-to-speak ratio?}
+ \end{frame}
+ 
+ \frame{\tableofcontents[hideallsubsections]}
+@@ -48,7 +56,8 @@
+   \frametitle{Das Internet}
+   \begin{figure}
+       \includegraphics[height=0.7\textheight]{img/internet_map.jpg}
+-      \caption{CC-BY https://de.wikipedia.org/wiki/Datei:Internet\_map\_1024.jpg}
++			\license[https://de.wikipedia.org/wiki/Datei:Internet_map_1024.jpg]{\cc{by}}
++			\ben{ich bin mir gerade gar nicht sicher, unter welcher lizenz die cc-icons stehen. Wär natürlich Schrott, wenn die nicht unter Public Domain stehen (dann hätte man ne unendliche Rekursion…)}
+       \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
+   \end{figure}
+ \end{frame}
+@@ -71,27 +80,29 @@
+   \frametitle{Pseudonymität}
+   \begin{figure}
+     \includegraphics[height=0.7\textheight]{img/internet_dog.jpg}
+-    \caption{Copyright Image from New Yorker cartoon by Peter Steiner. http://en.wikipedia.org/wiki/File:Internet\_dog.jpg}
++    \license[http://en.wikipedia.org/wiki/File:Internet_dog.jpg]{\copyright Image from New Yorker cartoon by Peter Steiner.}
+   \end{figure}
+ \end{frame}
+ 
+ \begin{frame}
+   \frametitle{Probleme des Internets}
++	\ben{Titel besser: Probleme im Internet?}
+   \begin{itemize}
+     \item<2-> Ungeschützte Datenübertragung
+       \note{keine Verschlüsselung (erst auf höherer Ebene), jeder auf der Paketroute kann mitlesen}
+     \item<3-> Keine Authentifizierung
+-      \note{TOR-Anonymisierung"` SSL-Verschlüsselung"' Ende-zu-Ende Verschlüsselung (OTR/GPG/PGP für Chat, GPG/PGP für Email)"` Passworteingabe in Formularen, Identitätsdiebstahl}
+-    \item<4-> "Das Internet vergisst nicht"
++      \note{TOR-Anonymisierung "`SSL-Verschlüsselung"' Ende-zu-Ende Verschlüsselung (OTR/GPG/PGP für Chat, GPG/PGP für E-Mail)"` Passworteingabe in Formularen, Identitätsdiebstahl}
++    \item<4-> "`Das Internet vergisst nicht"'
+       \note{Rechner kopieren Daten!, Privatnutzer, Crawler, Internet-Archive, Screenshot}
+   \end{itemize}
++	\ben{Ich würde an dieser Stelle statt der ersten beiden Punkten "Vertraulichkeit" und "Integrität" sagen (das ganze noch mit dem CIA Logo schmücken Confidentiality, Integrity and Availability, damit es auch keiner vergisst!). Evtl. könnte man hier auch sagen, dass Kryptographie mittlerweile Bestandteil des Informatiklehrplans ist und man dort auch noch was mit erklären kann. Achtung: TOR gehört IMHO nicht zu Authentifizierung (steht in den notes). Statt "Das Internet vergisst nicht" könnte man auch ein Bild von den Fußstapfen auf dem Mond vs. Fußstapfen im Sand machen (Bilder sind einprägsamer)}
+ \end{frame}
+ 
+ \begin{frame}
+   \frametitle{Praxis: Kindernet}
+   \begin{figure}
+       \includegraphics[height=0.7\textheight]{img/kindernet.png}
+-      \caption{CC}
++			\license{CC}\ben{was ist CC? Ist damit CC0 gemeint?}
+       \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
+   \end{figure}
+ \end{frame}
+@@ -120,7 +131,7 @@
+     \item<3-> Beispiele
+       \note{Frage: Wer ist bei Facebook?}
+       \begin{itemize}
+-        \item<3-> Email, Mailinglisten
++        \item<3-> E-Mail, Mailinglisten
+         \item<3-> Jabber, Skype, ICQ, MSN
+         \item<3-> Facebook, Google+, VZ-Netzwerke, Diaspora
+         \item<3-> Twitter, Identi.ca
+@@ -136,7 +147,7 @@
+   \begin{itemize}
+     \item<2-> Zentralität
+     \item<3-> Identität
+-    \item<4-> Was bedeutet "Befreundet sein"?
++    \item<4-> Was bedeutet "`Befreundet sein"'?
+     \item<5-> gerichtete/ungerichtete Graphen
+   \end{itemize}
+ \end{frame}
+@@ -145,7 +156,7 @@
+   \frametitle{Soziale Netzwerke - Geschäftsmodelle}
+   \begin{figure}
+     \includegraphics[height=0.6\textheight]{img/business_pigs.jpg}
+-    \caption{CC-BY-SA http://geekandpoke.typepad.com/geekandpoke/2010/12/the-free-model.html}
++		\license[http://geekandpoke.typepad.com/geekandpoke/2010/12/the-free-model.html]{\cc{by-sa}}
+   \end{figure}
+ \end{frame}
+ 
+@@ -173,9 +184,11 @@
+   \begin{itemize}
+     \item Einbauen der Ideen in den Unterricht
+       \note{Besser noch in die Lehrpläne! Themen: Kinder auf Internet vorbereiten,\ldots nicht das Internet auf die Kinder, keine Internetsperren, Eltern haben Erziehungsauftrag, grundlegendes Verständnis des Internets und seiner Dienste}
+-    \item Wir stehen zur Verfügung mit Rat und Tat (Aktionstage, Elternabende, Lehrerversammlungen,\ldots)
++    \item Wir stehen zur Verfügung mit Rat und Tat (Aktionstage, Elternabende, Lehrerversammlungen, \ldots)
++	\ben{"Wir stehen zur Verfügung mit Rat und Tat" finde ich nicht so gelungen. Das klingt so wie "Sie haben schließlich keine Ahnung, deshalb fragen sie uns, die Experten." Mir fällt gerade allerdings auch nix besseres ein, vielleicht lässt man den Punkt einfach weg? Oder lässt es so}
+     \item Junghackertrack bei den Datenspuren
+   \end{itemize}
++	\ben{Foto vom Junghackertrack?}
+ \end{frame}
+ 
+ \section{Freiheit}
+@@ -186,8 +199,9 @@
+   \begin{itemize}
+     \item<2-> Dezentrale Dienste
+       \note{man kann sich die Organisation aussuchen die seine Daten bekommt bzw. einen eigenen Server betreiben}
++			\ben{Wie wärs im Zusammenhang mit Dezentralität auch mit Diversität? Mal was anderes als Facebook/Windows/Skype kennen lernen? Ein Beispiel was Eltern/Lehrer/DAUs immer verstehen ist: "Ein Förster pflanzt keinen Wald in dem nur Fichten stehen. Dann hat er sofort einen Schädling drin, der alles kaputt macht. Vergleich: Windows -> Viren; Facebook als alleiniger Datenhalter -> viel Macht durch komplette Daten von allen; Google als alleinige Suchmaschine -> sehr leichte Manipulation durch Positionierung von Suchtreffern. Diversität ist immer Robuster (macht auch die Gesellschaft robuster).}
+       \begin{itemize}
+-        \item<4-> Email
++        \item<4-> E-Mail
+         \item<5-> Jabber/XMPP
+         \item<6-> Diaspora, Buddycloud
+       \end{itemize}
+@@ -202,6 +216,7 @@
+     \item<2-> Jeder ist Produzent und Konsument
+     \item<3-> Urheberrecht schränkt Verwendung ein
+     \item<4-> Freie Lizenzen ermöglichen Verbreitung
++			\ben{an dieser Stelle vielleicht CopyLeft als Buzzword erwähnen (daran erinnern sich dann vielleicht die Leute)}
+     \item<5-> Sharing is caring
+   \end{itemize}
+ \end{frame}
+@@ -224,14 +239,17 @@
+   \frametitle{Freie Software}
+   TODO Beispiele umdrehen!
+   \begin{itemize}
+-    \item Windows -> Linux
+-    \item Microsoft Office -> Libre Office/Open Office
+-    \item Internet Explorer -> Firefox
+-    \item Outlook -> Thunderbird
+-    \item Photoshop -> Gimp
+-    \item Illustrator -> Inkscape
+-    \item Windows Mediaplayer -> VLC Media Player
++    \item Windows $\to$ Linux
++    \item Microsoft Office $\to$ LibreOffice/OpenOffice
++    \item Internet Explorer $\to$ Firefox
++    \item Outlook $\to$ Thunderbird
++    \item Photoshop $\to$ Gimp
++    \item Illustrator $\to$ Inkscape
++    \item Windows Mediaplayer $\to$ VLC Media Player
+   \end{itemize}
++	\ben{Mein Lieblingsverweis an dieser stelle: alternativeto.net}
+ \end{frame}
+ 
+ \end{document}
++
++% vim: spelllang=de,en
+-- 
+1.7.5.4
+
