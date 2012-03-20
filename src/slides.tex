@@ -6,6 +6,12 @@
 \usepackage[utf8]{inputenc}
 \setbeamertemplate{footline}[frame number]
 
+\usepackage{pdfcomment}
+\newcommand{\ben}[1]{\pdfcomment[author=Ben]{#1}}
+\newcommand{\cc}[1]{\includegraphics[height=4mm]{img/#1.png}}
+\usepackage{ifthen}
+\newcommand{\license}[2][]{\\#2\ifthenelse{\equal{#1}{}}{}{\\\scriptsize\url{#1}}}
+
 \title{Umgang mit Sozialen Netzwerken}
 \author{Chaos Computer Club Dresden}
 \date{\today}
@@ -31,12 +37,12 @@
 \begin{frame}
   \frametitle{Wer sind wir?}
   \begin{itemize}
-    \item<2-> Chaos Computer Club Dresden (http://c3d2.de)
-      \begin{itemize}
-        \item<3-> Datenspuren (http://datenspuren.de)
-        \item<4-> Podcasts (http://pentamedia.de)
-        \item<5-> Chaos macht Schule (http://ccc.de/schule)
-      \end{itemize}
+    \item<2-> Chaos Computer Club Dresden (\url{http://c3d2.de})
+      \note{}
+    \item<3-> Datenspuren (\url{http://datenspuren.de})
+    \item<4-> Podcasts (\url{http://pentamedia.de})
+    \item<5-> Chaos macht Schule (\url{http://ccc.de/schule})
+      \note{alle Folien auf einmal aufblättern? Ben's vorschlag}
   \end{itemize}
 \end{frame}
 
@@ -58,6 +64,7 @@
     \item<9-> Elternabende
     \item<10-> Lehrerfortbildung
   \end{itemize}
+	\ben{click-to-speak ratio?}
 \end{frame}
 
 \section{Internet}
@@ -67,7 +74,8 @@
   \frametitle{Das Internet}
   \begin{figure}
       \includegraphics[height=0.7\textheight]{img/internet_map.jpg}
-      \caption{CC-BY https://de.wikipedia.org/wiki/Datei:Internet\_map\_1024.jpg}
+			\license[https://de.wikipedia.org/wiki/Datei:Internet\_map\_1024.jpg]{\cc{by}}
+			\ben{ich bin mir gerade gar nicht sicher, unter welcher lizenz die cc-icons stehen. Wär natürlich Schrott, wenn die nicht unter Public Domain stehen (dann hätte man ne unendliche Rekursion…)}
       \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
   \end{figure}
 \end{frame}
@@ -90,27 +98,29 @@
   \frametitle{Pseudonymität}
   \begin{figure}
     \includegraphics[height=0.7\textheight]{img/internet_dog.jpg}
-    \caption{Copyright Image from New Yorker cartoon by Peter Steiner. http://en.wikipedia.org/wiki/File:Internet\_dog.jpg}
+    \license[http://en.wikipedia.org/wiki/File:Internet_dog.jpg]{\copyright Image from New Yorker cartoon by Peter Steiner.}
   \end{figure}
 \end{frame}
 
 \begin{frame}
   \frametitle{Probleme des Internets}
+  \ben{Titel besser: Probleme im Internet?}
   \begin{itemize}
     \item<2-> Ungeschützte Datenübertragung
       \note{keine Verschlüsselung (erst auf höherer Ebene), jeder auf der Paketroute kann mitlesen}
     \item<3-> Keine Authentifizierung
-      \note{TOR-Anonymisierung"` SSL-Verschlüsselung"' Ende-zu-Ende Verschlüsselung (OTR/GPG/PGP für Chat, GPG/PGP für Email)"` Passworteingabe in Formularen, Identitätsdiebstahl}
-    \item<4-> "Das Internet vergisst nicht"
+      \note{TOR-Anonymisierung "`SSL-Verschlüsselung"' Ende-zu-Ende Verschlüsselung (OTR/GPG/PGP für Chat, GPG/PGP für E-Mail)"` Passworteingabe in Formularen, Identitätsdiebstahl}
+    \item<4-> "`Das Internet vergisst nicht"'
       \note{Rechner kopieren Daten!, Privatnutzer, Crawler, Internet-Archive, Screenshot}
   \end{itemize}
+  \ben{Ich würde an dieser Stelle statt der ersten beiden Punkten "Vertraulichkeit" und "Integrität" sagen (das ganze noch mit dem CIA Logo schmücken Confidentiality, Integrity and Availability, damit es auch keiner vergisst!). Evtl. könnte man hier auch sagen, dass Kryptographie mittlerweile Bestandteil des Informatiklehrplans ist und man dort auch noch was mit erklären kann. Achtung: TOR gehört IMHO nicht zu Authentifizierung (steht in den notes). Statt "Das Internet vergisst nicht" könnte man auch ein Bild von den Fußstapfen auf dem Mond vs. Fußstapfen im Sand machen (Bilder sind einprägsamer)}
 \end{frame}
 
 \begin{frame}
   \frametitle{Praxis: Kindernet}
   \begin{figure}
       \includegraphics[height=0.7\textheight]{img/kindernet.png}
-      \caption{CC}
+      \license{CC}\ben{was ist CC? Ist damit CC0 gemeint?}
       \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
   \end{figure}
 \end{frame}
@@ -139,7 +149,7 @@
     \item<3-> Beispiele
       \note{Frage: Wer ist bei Facebook?}
       \begin{itemize}
-        \item<4-> Email, Mailinglisten
+        \item<4-> E-Mail, Mailinglisten
         \item<5-> Jabber, Skype, ICQ, MSN
         \item<6-> Facebook, Google+, VZ-Netzwerke, Diaspora
         \item<7-> Twitter, Identi.ca
@@ -155,7 +165,7 @@
   \begin{itemize}
     \item<2-> Zentralität
     \item<3-> Identität
-    \item<4-> Was bedeutet "Befreundet sein"?
+    \item<4-> Was bedeutet "`Befreundet sein"'?
     \item<5-> gerichtete/ungerichtete Graphen
   \end{itemize}
 \end{frame}
@@ -163,9 +173,9 @@
 \begin{frame}
   \frametitle{Soziale Netzwerke - Geschäftsmodelle}
   \uncover<2->{
-  \begin{figure}
-    \includegraphics[height=0.6\textheight]{img/business_pigs.jpg}
-    \caption{CC-BY-SA http://geekandpoke.typepad.com/geekandpoke/2010/12/the-free-model.html}
+    \begin{figure}
+      \includegraphics[height=0.6\textheight]{img/business_pigs.jpg}
+      \license[http://geekandpoke.typepad.com/geekandpoke/2010/12/the-free-model.html]{\cc{by-sa}}
   \end{figure}}
 \end{frame}
 
@@ -222,6 +232,7 @@
     \item<2-> Jeder ist Produzent und Konsument
     \item<3-> Urheberrecht schränkt Verwendung ein
     \item<4-> Freie Lizenzen ermöglichen Verbreitung
+      \ben{an dieser Stelle vielleicht CopyLeft als Buzzword erwähnen (daran erinnern sich dann vielleicht die Leute)}
     \item<5-> Sharing is caring
   \end{itemize}
 \end{frame}
