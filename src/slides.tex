@@ -1,4 +1,5 @@
-\documentclass{beamer}
+%\documentclass{beamer}
+\documentclass[12pt,handout]{beamer}
 \usetheme{Darmstadt}
 \usepackage{graphicx}
 \usepackage[german]{babel}
@@ -11,6 +12,7 @@
 \newcommand{\cc}[1]{\includegraphics[height=4mm]{img/#1.png}}
 \usepackage{ifthen}
 \newcommand{\license}[2][]{\\#2\ifthenelse{\equal{#1}{}}{}{\\\scriptsize\url{#1}}}
+\usepackage{textcomp}
 
 \title{Umgang mit Sozialen Netzwerken}
 \author{Chaos Computer Club Dresden}
@@ -64,7 +66,6 @@
     \item<9-> Elternabende
     \item<10-> Lehrerfortbildung
   \end{itemize}
-	\ben{click-to-speak ratio?}
 \end{frame}
 
 \section{Internet}
@@ -75,7 +76,6 @@
   \begin{figure}
       \includegraphics[height=0.7\textheight]{img/internet_map.jpg}
 			\license[https://de.wikipedia.org/wiki/Datei:Internet\_map\_1024.jpg]{\cc{by}}
-			\ben{ich bin mir gerade gar nicht sicher, unter welcher lizenz die cc-icons stehen. Wär natürlich Schrott, wenn die nicht unter Public Domain stehen (dann hätte man ne unendliche Rekursion…)}
       \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
   \end{figure}
 \end{frame}
@@ -103,8 +103,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Probleme des Internets}
-  \ben{Titel besser: Probleme im Internet?}
+  \frametitle{Probleme im Internet}
   \begin{itemize}
     \item<2-> Ungeschützte Datenübertragung
       \note{keine Verschlüsselung (erst auf höherer Ebene), jeder auf der Paketroute kann mitlesen}
@@ -113,14 +112,13 @@
     \item<4-> "`Das Internet vergisst nicht"'
       \note{Rechner kopieren Daten!, Privatnutzer, Crawler, Internet-Archive, Screenshot}
   \end{itemize}
-  \ben{Ich würde an dieser Stelle statt der ersten beiden Punkten "Vertraulichkeit" und "Integrität" sagen (das ganze noch mit dem CIA Logo schmücken Confidentiality, Integrity and Availability, damit es auch keiner vergisst!). Evtl. könnte man hier auch sagen, dass Kryptographie mittlerweile Bestandteil des Informatiklehrplans ist und man dort auch noch was mit erklären kann. Achtung: TOR gehört IMHO nicht zu Authentifizierung (steht in den notes). Statt "Das Internet vergisst nicht" könnte man auch ein Bild von den Fußstapfen auf dem Mond vs. Fußstapfen im Sand machen (Bilder sind einprägsamer)}
 \end{frame}
 
 \begin{frame}
   \frametitle{Praxis: Kindernet}
   \begin{figure}
       \includegraphics[height=0.7\textheight]{img/kindernet.png}
-      \license{CC}\ben{was ist CC? Ist damit CC0 gemeint?}
+      \license{CC}
       \note{Routing und Ausfallsicherheit, jeder kann Daten lesen, optional: DNS}
   \end{figure}
 \end{frame}
@@ -181,7 +179,10 @@
 
 \begin{frame}
   \frametitle{Praxis: Kinderbook}
-  TODO Koeart: Symbolfoto, Fotos Kindernet
+  \begin{figure}
+      \includegraphics[height=0.6\textheight]{img/alien1.png}
+      \license[Paul Schwanse]{\cc{by}}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -212,7 +213,9 @@
         \item<5-> Diaspora, Buddycloud
       \end{itemize}
     \item<6-> Alle Sender gleichberechtigt
-    \item<7-> Unix-Philosophie: "`Do one thing, do it right"' (Doug McIlroy)
+    \item<7-> Unix-Philosophie von Doug McIlroy:
+        \begin{quote}Do one thing, do it right!
+        \end{quote}
   \end{itemize}
 \end{frame}
 
@@ -221,8 +224,8 @@
   \begin{itemize}
     \item<2-> Jeder ist Produzent und Konsument
     \item<3-> Urheberrecht schränkt Verwendung ein
-    \item<4-> Freie Lizenzen ermöglichen Verbreitung
-      \ben{an dieser Stelle vielleicht CopyLeft als Buzzword erwähnen (daran erinnern sich dann vielleicht die Leute)}
+    \item<4-> Freie Lizenzen ermöglichen Verbreitung \textcopyleft
+%      \ben{an dieser Stelle vielleicht CopyLeft als Buzzword erwähnen (daran erinnern sich dann vielleicht die Leute)}
     \item<5-> Sharing is caring
   \end{itemize}
 \end{frame}
@@ -263,7 +266,8 @@
     \item Einbauen der Ideen in den Unterricht
       \note{Besser noch in die Lehrpläne! Themen: Kinder auf Internet vorbereiten,\ldots nicht das Internet auf die Kinder, keine Internetsperren, Eltern haben Erziehungsauftrag, grundlegendes Verständnis des Internets und seiner Dienste}
     \item Wir stehen zur Verfügung mit Rat und Tat (Aktionstage, Elternabende, Lehrerversammlungen,\ldots)
-    \item Junghackertrack bei den Datenspuren
+    \item Junghackertrack bei den Datenspuren (12-14. Oktober 2012)
+    \item Datenspuren 2012 - Voll verwanzt. 13./14. Oktober 2012, Scheune Dresden
   \end{itemize}
 \end{frame}
 

@@ -1,3 +1,4 @@
 out
 *.swp
-patch
+patch/*
+*.svg
