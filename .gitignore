@@ -2,3 +2,9 @@ out
 *.swp
 patch/*
 *.svg
+*.aux
+*.log
+*.pdf
+.*
+*.out
+*.tex~
