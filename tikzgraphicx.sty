@@ -1,0 +1,94 @@
+\ProvidesPackage{tikzgraphicx}[2010/02/23 TikZ+graphicx+GIMP Library]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Copyright 2009, 2010, 2011 Benjamin Kellermann                           %
+%                                                                          %
+% This program is free software: you can redistribute it and/or modify it  %
+% under the terms of the GNU General Public License as published by the    %
+% Free Software Foundation, either version 3 of the License, or (at your   %
+% option) any later version.                                               %
+%                                                                          %
+% This program is distributed in the hope that it will be useful, but      %
+% WITHOUT ANY WARRANTY; without even the implied warranty of               %
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU        %
+% General Public License for more details.                                 %
+%                                                                          %
+% You should have received a copy of the GNU General Public License along  %
+% with this program.  If not, see <http://www.gnu.org/licenses/>.          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%TODO: - Lupe malen
+
+\RequirePackage{graphicx}
+\RequirePackage{calc}
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+
+%usage:
+%\begin{tikzgraphics}[opts]{width}{xres}{yres}{picname}
+%  \pxnode…
+%\end{tikzgraphics}
+\newlength{\picscale}
+\newlength{\picxrange}
+\newlength{\picyrange}{}
+\newcommand*{\picname}{}
+\newenvironment*{tikzgraphics}[5][]{%
+	\setlength{\picscale}{#2}%
+	\setlength{\picxrange}{#3pt}%
+	\setlength{\picyrange}{#4pt}%
+	\renewcommand{\picname}{#5}%
+	\begin{tikzpicture}[scale=\picscale/\picxrange,#1]
+		\node[inner sep=0pt] (tikzgraphicsnode) at ($(\picxrange/2,\picyrange/2)$){\includegraphics[width=\picscale]{\picname}};
+}{\end{tikzpicture}}
+
+%usage:
+%\pxcoordinate[opts]{x}{y}{name}
+\newcommand*{\pxcoordinate}[4][]{%
+	\coordinate[#1] (#4) at ($(#2pt,\picyrange-#3pt)$);
+}
+%usage:
+%\pxnode[opts]{x}{y}{name}{text}
+\newcommand*{\pxnode}[5][]{%
+	\node[#1] (#4) at ($(#2pt,\picyrange-#3pt)$) {#5};
+}
+
+%usage:
+%\pxrectangle[opts]{x}{y}{+x}{+y}
+\newcommand*{\pxrectangle}[5][]{%
+	\draw[#1] ($(#2pt,\picyrange-#3pt)$) rectangle ($(#2pt+#4pt,\picyrange-#3pt-#5pt)$);
+}
+
+%usage:
+%\pxellipse[opts]{x}{y}{+x}{+y}
+\newcommand*{\pxellipse}[5][]{%
+	\draw[scale=0.5,#1] ($(#2pt*2+#4pt,\picyrange*2-#3pt*2-#5pt)$) ellipse (#4pt and #5pt);
+}
+
+%usage:
+%\begin{tikzzoomgraphics}[opts]{scalefactor}{basex}{basey}{zoomx}{zoomy}
+%  \pxnode…
+%\end{tikzzoomgraphics}
+\newlength{\innerpicxadd}
+\newlength{\innerpicyadd}
+\newlength{\tmpscale}
+\newlength{\oldpicyrange}
+\newcommand*{\innerpicscale}{}
+\newcommand*{\insertpicture}{}
+\newenvironment*{tikzzoomgraphics}[6][]{%
+	\setlength{\tmpscale}{\picscale*\real{#2}}%
+	\pxnode{#3}{#4}{zoomgraphicanchor}{}%
+	\renewcommand*{\insertpicture}{%
+	\node[inner sep=.5\pgflinewidth,#1]
+		at ($(zoomgraphicanchor)+(\picxrange/2,-\oldpicyrange/2)+(-#5pt,#6pt)$) {%
+			\includegraphics[%
+				width=\tmpscale,%
+				keepaspectratio
+			]{\picname}};
+	}%
+	\setlength{\oldpicyrange}{\picyrange}%
+	\setlength{\picyrange}{\picyrange*\real{#2}}%
+	\renewcommand{\innerpicscale}{#2}%
+	\begin{scope}[scale=\real{#2},xshift=#3pt/#2-#5,yshift=(\oldpicyrange-#4pt)/#2-(\picyrange-#6pt),overlay,#1]%
+}{%
+	\setlength{\picyrange}{\oldpicyrange}%
+	\end{scope}%
+}

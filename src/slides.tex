@@ -1,5 +1,6 @@
 %\documentclass{beamer}
 \documentclass[14pt,handout]{beamer}
+\usepackage{tikzgraphicx}
 \usetheme{Darmstadt}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -14,10 +15,19 @@
 \usepackage{ifthen}
 \newcommand{\license}[2][]{\\#2\ifthenelse{\equal{#1}{}}{}{\\\scriptsize\url{#1}}}
 \usepackage{textcomp}
-
-\title{Umgang mit Sozialen Netzwerken}
-\author{Chaos Computer Club Dresden\\Marius Melzer, Paul Schwanse, Stephan Thamm}
-\date{Stand: 22. März 2012}
+%\minipagecolumn[leftwidth]{leftcontent}{rightcontent}
+\newcommand{\minipagecolumn}[3][.475\columnwidth]{%
+	\begin{minipage}{#1}%
+		#2%
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}{0.95\textwidth-#1}%
+		#3%
+	\end{minipage}%
+}
+\title{Chaos macht Schule}
+\author{Chaos Computer Club Dresden\\Paul Schwanse}
+\date{Stand: 29. Dezember 2012}
 
 \begin{document}
 \maketitle
@@ -28,7 +38,7 @@
 \subsection{}
 
 \begin{frame}
-    \frametitle{Motivation}
+    \frametitle{Edu.cat(ion)\_is.not.o\{u\}r.dep\/art.ment\{?\}}
     \begin{itemize}
         \item<2-> immer tiefere Integration von Computern in das Leben der Menschen
             \note{Hörgeräte, Herzschrittmacher, Digitale Lebensaufzeichnungen, Bundestrojaner -> FAZ Feuilleton}
@@ -57,6 +67,8 @@
 
 \begin{frame}
     \frametitle{Chaos macht Schule}
+%\minipagecolumn[leftwidth]{leftcontent}{rightcontent}
+        \minipagecolumn[0.4\textwidth]{
     \begin{itemize}
         \item <2-> Augsburg
         \item <2-> Darmstadt
@@ -68,8 +80,24 @@
         \item <2-> München
         \item <2-> Stuttgart
         \item <2-> Ulm
-        \item <3-> schule@lists.ccc.de
+        \item <2-> \ldots
     \end{itemize}
+}{
+    \begin{tikzgraphics}[kreis/.style={circle, inner sep=0pt, minimum width=2mm, fill=yellow}]{5cm}
+	{1000}{1416}{img/deutschland.png}
+       \pxnode[kreis]{783}{755}{dresden}{}
+       \pxnode[kreis]{549}{1125}{augsburg}{}
+       \pxnode[kreis]{347}{751}{darmstadt}{}
+       \pxnode[kreis]{489}{420}{hamburg}{}
+       \pxnode[kreis]{329}{1028}{karlsruhe}{}
+       \pxnode[kreis]{219}{757}{koeln}{}
+       \pxnode[kreis]{334}{954}{mannheim}{}
+       \pxnode[kreis]{602}{1156}{muenchen}{}
+       \pxnode[kreis]{403}{1060}{stuttgart}{}
+       \pxnode[kreis]{562}{1120}{ulm}{}
+\end{tikzgraphics}
+}
+
 \end{frame}
 
             
@@ -215,15 +243,15 @@
     \end{figure}}
 \end{frame}
 
-%\begin{frame}
-%    \frametitle{Praxis: Kinderbook}
-%    \uncover<2->{
-%        \begin{figure}
-%            \includegraphics[height=0.6\textheight]{img/alien1.png}
-%            \license[Paul Schwanse]{\cc{by}}
-%        \end{figure}
-%    }
-%\end{frame}
+\begin{frame}
+    \frametitle{Praxis: Kinderbook}
+    \uncover<2->{
+        \begin{figure}
+            \includegraphics[height=0.6\textheight]{img/alien1.png}
+            \license[Paul Schwanse]{\cc{by}}
+        \end{figure}
+    }
+\end{frame}
 
 \begin{frame}
     \frametitle{Soziale Netzwerke - Lernziel}
@@ -301,18 +329,20 @@
 \section{Fazit}
 \subsection{}
 
-\begin{frame}
-    \frametitle{Wie weiter?}
-    \begin{itemize}
-        \item<2-> Einbauen der Ideen in den Unterricht
-            \note{Besser noch in die Lehrpläne! Themen: Kinder auf Internet vorbereiten,\ldots nicht das Internet auf die Kinder, keine Internetsperren, Eltern haben Erziehungsauftrag, grundlegendes Verständnis des Internets und seiner Dienste}
-        \item<3-> Wir stehen zur Verfügung mit Rat und Tat (Aktionstage, Elternabende, Lehrerversammlungen,\ldots)
-        \item<4-> Kontaktieren Sie uns! \url{schule@c3d2.de}
-    \end{itemize}
-\end{frame}
+%\begin{frame}
+%    \frametitle{Wie weiter?}
+%    \begin{itemize}
+%        \item<2-> Einbauen der Ideen in den Unterricht
+%            \note{Besser noch in die Lehrpläne! Themen: Kinder auf Internet vorbereiten,\ldots nicht das Internet auf die Kinder, keine Internetsperren, Eltern haben Erziehungsauftrag, grundlegendes Verständnis des Internets und seiner Dienste}
+%        \item<3-> Wir stehen zur Verfügung mit Rat und Tat (Aktionstage, Elternabende, Lehrerversammlungen,\ldots)
+%        \item<4-> Kontaktieren Sie uns! \url{schule@c3d2.de}
+%    \end{itemize}
+%\end{frame}
 
 \begin{frame}
     \frametitle{Chaos macht Schule}
+%\minipagecolumn[leftwidth]{leftcontent}{rightcontent}
+        \minipagecolumn[0.4\textwidth]{
     \begin{itemize}
         \item <2-> Augsburg
         \item <2-> Darmstadt
@@ -324,9 +354,26 @@
         \item <2-> München
         \item <2-> Stuttgart
         \item <2-> Ulm
-        \item <3-> schule@lists.ccc.de
+        \item <2-> \ldots
     \end{itemize}
+}{
+    \begin{tikzgraphics}[kreis/.style={circle, inner sep=0pt, minimum width=2mm, fill=yellow}]{5cm}
+	{1000}{1416}{img/deutschland.png}
+       \pxnode[kreis]{783}{755}{dresden}{}
+       \pxnode[kreis]{549}{1125}{augsburg}{}
+       \pxnode[kreis]{347}{751}{darmstadt}{}
+       \pxnode[kreis]{489}{420}{hamburg}{}
+       \pxnode[kreis]{329}{1028}{karlsruhe}{}
+       \pxnode[kreis]{219}{757}{koeln}{}
+       \pxnode[kreis]{334}{954}{mannheim}{}
+       \pxnode[kreis]{602}{1156}{muenchen}{}
+       \pxnode[kreis]{403}{1060}{stuttgart}{}
+       \pxnode[kreis]{562}{1120}{ulm}{}
+\end{tikzgraphics}
+}
+
 \end{frame}
+
 
 
 \begin{frame}

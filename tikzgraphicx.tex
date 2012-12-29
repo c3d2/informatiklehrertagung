@@ -1,0 +1,286 @@
+\documentclass{scrartcl}
+\usepackage{fixltx2e}
+\AtBeginDocument{\usepackage{ellipsis}}
+\usepackage{microtype}
+\usepackage{thumbpdf}
+
+\usepackage{units}
+
+\title{TikZ + graphicx}
+\subtitle{Coordinate translation from picture pixel to TikZ}
+\author{Benjamin Kellermann}
+\makeatletter
+\usepackage{hyperref} 
+\hypersetup{%
+	backref,
+	breaklinks,
+	colorlinks,
+	linkcolor = black,
+	filecolor = black,
+	urlcolor  = black,
+	citecolor = black,
+	pdfdisplaydoctitle,
+	plainpages = false,
+	pdfpagemode = {UseOutlines},
+	pdflang = {en},
+	bookmarksopen,
+	bookmarksnumbered,
+	bookmarksopenlevel = {2},
+	pdfpagelabels,
+	pdfstartview = {FitH},
+	pdftitle = {\@title},
+	pdfkeywords = {TikZ, graphicx},
+	pdfauthor  = {\@author}
+}
+\makeatother
+\usepackage[figure]{hypcap}
+
+\usepackage{varioref}
+
+% provide command for referencing to figures and tables
+% from Heiko Oberdiek (d09n5p$9md$1@news.BelWue.DE);
+% usage: This is illustrated in \abbvref{label}.
+\providecommand*{\figvrefname}{Figure}
+\newcommand*{\figvref}[1]{%
+	\hyperref[#1]{\figvrefname}\vref{#1}%
+}
+\providecommand*{\tabvrefname}{Table}
+\newcommand*{\tabvref}[1]{%
+	\hyperref[#1]{\tabvrefname}\vref{#1}%
+}
+
+
+% Disable single lines at the start of a paragraph (Schusterjungen)
+\clubpenalty = 10000
+% Disable single lines at the end of a paragraph (Hurenkinder)
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+\newcommand{\minipagecolumn}[3]{%
+	\begin{minipage}{#1}
+		#2
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.95\textwidth-#1}
+		#3
+	\end{minipage}
+}
+\usepackage{tikzgraphicx}
+\graphicspath{{pic/}}
+\usepackage{color}
+\usepackage{listings}
+\lstset{%
+	basicstyle=\ttfamily\small,
+	stringstyle=\color{red},
+	keywordstyle=\color{cyan},
+	identifierstyle=\color{blue},
+	commentstyle=\color{gray},
+	numbers=left,
+	numberstyle=\tiny,
+	tabsize=2,
+	language=[LaTeX]TeX
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+	It happens often, that one wants to annotate a graphic or draw some lines inside a graphic.
+	This package solves the problem, of finding the right coordinates for TikZ by translating the pixel coordinates of the picture into TikZ coordinates.
+	We show this using GIMP, but other image editors may be used to.
+	Additionally, the package offers the possibility to zoom parts of an image.
+\end{abstract}
+
+\section{Preamble}
+\begin{lstlisting}
+\usepackage{tikzgraphicx}
+\end{lstlisting}
+
+\section{Drawing in a Picture}
+Assume we want to include a picture in our document. 
+This is done with a new environment \lstinline+tikzgraphics+.
+This environment takes 4 parameters, the width of the picture, the x and y resolution and the filename:
+\begin{lstlisting}
+\begin{tikzgraphics}[<tikzopts>]{<TeX-width>}
+	{<x-pixel-size>}{<y-pixel-size>}{<filename>}
+\end{tikzgraphics}
+\end{lstlisting}
+To include a picture one would write something like:
+\begin{lstlisting}
+\begin{tikzgraphics}{.5\textwidth}{1818}{1839}{arthur}
+\end{tikzgraphics}
+\end{lstlisting}
+which would produce the same as
+\begin{lstlisting}
+\includegraphics[width=.5\textwidth]{arthur}
+\end{lstlisting}
+with the difference, that one can write TikZ code within the environment.
+Additionally to the TikZ commands, one can use special commands defined by tikzgraphicx. 
+\subsection{Coordinates and Nodes}
+The first ones are \lstinline+\pxcoordinate+ and \lstinline+\pxnode+, which are used to place TikZ coordinates and nodes.
+As they work similarly, with the only difference that the coordinate does not have a text argument, we will explain only the node usage.
+To determine the destination, GIMP is used.
+Open the picture in GIMP and place the cursor at the position you want to have an node as shown in \figvref{fig:node}.
+You can read the x,y-coordinates which are given to \lstinline+\pxcoordinate+ and \lstinline+\pxnode+ at the bottom left.%
+\footnote{%
+	Note, that GIMP maps the coordinate 0,0 to the upper left corner.
+	This might be different if you use another graphic editor!
+}
+\begin{lstlisting}
+	\pxcoordinate[<opt>]{<x>}{<y>}{<name>}
+	\pxnode[<opt>]{<x>}{<y>}{<name>}{<text>}
+\end{lstlisting}
+
+\begin{figure}
+	\minipagecolumn{.43\textwidth}{%
+		\begin{tikzgraphics}[ultra thick,color=red]{\textwidth}{287}{359}{node}
+			\pxellipse{153}{247}{48}{49}
+			\pxellipse{6}{319}{88}{37}
+		\end{tikzgraphics}
+	}{%
+		\begin{tikzgraphics}[remember picture]{\textwidth}{1818}{1839}{arthur}
+			\pxnode[color=green]{1112}{1552}{foot}{x}
+		\end{tikzgraphics}
+		\centering
+		Do you see the\tikz[remember picture,baseline]{\node[anchor=base](x){x?};}
+		\tikz[remember picture,overlay]{%
+			\draw[->,ultra thick,color=green](x).. controls +(0:1) and +(0:1).. (foot);
+		}
+	}
+	\begin{lstlisting}
+\begin{tikzgraphics}[remember picture]{5cm}{1818}{1839}{arthur}
+	\pxnode[color=green]{1112}{1552}{foot}{x}
+\end{tikzgraphics}
+	\end{lstlisting}
+	\caption{\label{fig:node}Placing a TikZ node with GIMP. The code shown at the bottom is for the left picture.}
+\end{figure}
+
+\subsection{Ellipses and Rectangles}
+The next thing we want to do is painting an ellipse.
+For this, one paints the ellipse in GIMP and reads the coordinates given to \lstinline+\pxellipse+.
+Equivalent to \lstinline+\pxellipse+, one can use \lstinline+\pxrectangle+, which uses the same input variables, but draws a rectangle.
+The usage is:
+\begin{lstlisting}
+\pxellipse[<opt>]{<x>}{<y>}{<+x>}{<+y>}
+\pxrectangle[<opt>]{<x>}{<y>}{<+x>}{<+y>}
+\end{lstlisting}
+An example is shown in \figvref{fig:ellipse}.
+\begin{figure}
+	\minipagecolumn{.55\textwidth}{%
+		\begin{tikzgraphics}[ultra thick,color=red]{\textwidth}{959}{746}{ellipse}
+			\pxrectangle{630}{530}{200}{120}
+			\pxcoordinate{0}{450}{oul}
+			\pxcoordinate{300}{590}{odr}
+			\begin{tikzzoomgraphics}{2}{600}{200}{145}{530}
+				\pxcoordinate{0}{450}{iul}
+				\pxcoordinate{300}{590}{idr}
+				\pxrectangle[draw=none,clip]{0}{450}{300}{140}
+				\insertpicture
+			\end{tikzzoomgraphics}
+			\draw (iul) rectangle (idr);
+			\draw (oul) rectangle (odr);
+			\coordinate(iur) at(idr|-iul);
+			\coordinate(our) at (odr|-oul);
+			\coordinate(idl) at (idr-|iul);
+			\begin{scope}[thick]
+				\draw (iul) -- (oul);
+				\draw (idr) -- (odr);
+				\draw (intersection cs:
+						first  line={(our) -- (iur)},
+						second line={(idr) -- (idl)})
+					-- (odr|-oul);
+				\draw (idr-|iul) -- (odr-|oul);
+			\end{scope}
+		\end{tikzgraphics}
+	}{%
+		\begin{tikzgraphics}[thick]%
+			{\textwidth}{1818}{1839}{arthur}
+			\pxellipse[color=green]{1048}{1483}{272}{143}
+		\end{tikzgraphics}
+	}
+	\begin{lstlisting}
+\begin{tikzgraphics}[ultra thick]{5cm}{1818}{1839}{arthur}
+	\pxellipse[color=green]{1048}{1483}{272}{143}
+\end{tikzgraphics}
+	\end{lstlisting}
+	\caption{\label{fig:ellipse}Drawing a TikZ ellipse with GIMP. The code shown below is the code for the right picture. The coordinates are taken from GIMP.}
+\end{figure}
+
+
+\section{Picture in Picture}
+It occurs sometimes, that one wants to zoom parts of a picture.
+This is possible with the \lstinline+tikzzoomgraphics+ environment, which can be accessed inside a \lstinline+tikzgraphics+ environment.
+It expects 5 parameters.
+The first, is a factor, by which level the picture is zoomed.
+E.g., if the \lstinline+tikzgraphics+ environment was opened with \unit[5]{cm} and 2.5 is given as zoomfactor, the resulting image would have a size of \unit[12.5]{cm}.
+The zoomed image is placed over the original image.
+Two points have to be given, which are laid on top of each other.
+The second and third parameters are x,y coordinates of a point in the source image.
+The last two parameters are x,y coordinates of a point in the zoomed image.
+These are two points, which will be put on top of each other.
+
+Inside the \lstinline+tikzzoomgraphics+ environment, one can use the already defined commands.
+Inside the inner graphic, one has to insert the zoomed picture with \lstinline+\insertpicture+ manually.
+This gives one the opportunity to draw a \lstinline+clip+ beforehand and paint other things afterwards.
+The usage is:
+
+\begin{lstlisting}
+\begin{tikzgraphics}[<tikzopts>]{<TeX-width>}
+		{<x-pixel-size>}{<y-pixel-size>}{<filename>}
+	\begin{tikzzoomgraphics}
+			[<tikzopts>]
+			{<zoomfactor>}
+			{<xpos_source_pic>}{<ypos_source_pic>}
+			{<xpos_zoomed_pic>}{<ypos_zoomed_pic>}
+		\path[clip] ...;
+		\insertpicture
+	\end{tikzzoomgraphics}
+\end{tikzgraphics}
+\end{lstlisting}
+
+An example is given in \figvref{fig:picinpic}.
+\begin{figure}
+	\centering
+	\begin{tikzgraphics}[ultra thick]{.7\textwidth}{1818}{1839}{arthur}
+		\pxcoordinate{1100}{1630}{a}
+		\draw (a).. controls +(130:15) and +(0:20)..(a);
+		\begin{tikzzoomgraphics}{2.5}{1300}{400}{1110}{1555}
+			\pxcoordinate{1100}{1630}{b}
+			\draw[clip] (b).. controls +(130:15) and +(0:20).. (b);
+			\insertpicture
+			\pxcoordinate[draw,circle,color=red,minimum width=20pt]{1110}{1555}{}
+		\end{tikzzoomgraphics}
+		\pxcoordinate[circle,fill=green]{1300}{400}{}
+	\end{tikzgraphics}
+	\begin{lstlisting}
+\begin{tikzgraphics}[ultra thick]{5cm}{1818}{1839}{arthur}
+	\pxcoordinate{1100}{1630}{a}
+	\draw (a).. controls +(130:15) and +(0:20)..(a);
+	\begin{tikzzoomgraphics}{2.5}{1300}{400}{1110}{1555}
+		\pxcoordinate{1100}{1630}{b}
+		\draw[clip] (b).. controls +(130:15) and +(0:20)..(b);
+		\insertpicture
+		\pxcoordinate[draw,circle,color=red,minimum width=20pt]
+			{1110}{1555}{}
+	\end{tikzzoomgraphics}
+	\pxcoordinate[circle,fill=green]{1300}{400}{}
+\end{tikzgraphics}
+	\end{lstlisting}
+	\caption{%
+		\label{fig:picinpic}
+		Zooming a Picture.
+		Remark, that inside and outside the \lstinline+tikzzoomgraphics+ environment, almost the same commands are written.
+		The coordinates are calculated in the proper contexts.
+		I.e., line~2 and 5 are the same (specifying the same point in both pictures).
+		Line~3 and 6 draw the same path in both pictures.
+		The \lstinline+pxcoordinates+ in line~8--9 and line 11 are the two coordinates, specified in line~4 and show, that the two points specified as parameter of \lstinline+tikzzoomgraphics+ environment lay on top of each other.
+}
+\end{figure}
+The following lines may be helpful if one wants to gray out all of the picture instead of the clipping path. 
+These have to be inserted before the \lstinline+tikzzoomgraphics+ environment
+\begin{lstlisting}
+\path[fill, fill opacity=.5,even odd rule] 
+	(current bounding box.north west) rectangle 
+	(current bounding box.south east)
+	(a).. controls +(130:15) and +(0:20).. (a);
+\end{lstlisting}
+\end{document}
